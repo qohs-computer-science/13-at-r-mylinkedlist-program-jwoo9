@@ -66,6 +66,33 @@ public class MyLinkedList
         return retVal;
     } //end method set
 
+    public Object remove (int i){
+        if (i<0 || i>=size)
+            throw new IndexOutOfBoundsException();
+        if (i == 0)
+            return removeFirst();
+        else{
+            ListNode temp = head;
+            for (int x = 0; x<i-1;x++)
+                temp=temp.getNext();
+            ListNode temp2 = temp.getNext();
+            temp.setNext(temp2.getNext());
+            Object retVal = temp2.getValue();
+            temp2.setNext(null);
+            return retVal;
+        }//end else
+    } //end method remove
+
+    public Object removeFirst(){
+        if (size == 0)
+            return null;
+        ListNode temp = head;
+        Object retVal = temp.getValue();
+        head = head.getNext();
+        temp.setNext(null);
+        return retVal;
+    }//end method removeFirst
+
     public String toString()
     {
         String retVal = "";
