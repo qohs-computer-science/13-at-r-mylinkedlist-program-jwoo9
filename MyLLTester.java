@@ -1,10 +1,12 @@
+//Justin Wu, 10/28/24, Pd 3
+//Coding LinkedList in Java - tester file
 public class MyLLTester
 {
   public static void main(String [] args)
   {
     MyLinkedList myLL = new MyLinkedList();
-    System.out.println(myLL.size());
-    System.out.println(myLL.isEmpty());
+    System.out.println("Initial size: " + myLL.size());
+    System.out.println("Initial isEmpty: " + myLL.isEmpty());
     myLL.add("test1");
     myLL.add("test2");
     myLL.add("test3");
@@ -14,25 +16,27 @@ public class MyLLTester
     myLL.add("test7");
     myLL.add("test8");
     myLL.add("test9");
+    System.out.println("Initial adding of elements\n" + myLL);
     myLL.addLast("testLast");
+    System.out.println("Add Last\n" + myLL);
     myLL.addFirst("testFirst");
-    System.out.println(myLL.toString());
-    System.out.println(myLL.size());
-    System.out.println(myLL.isEmpty());
-    System.out.println(myLL.get(0));
-    System.out.println(myLL.get(2));
-    System.out.println(myLL.get(10));
-    System.out.println(myLL.get(1));
+    System.out.println("Add first \n" + myLL);
+    System.out.println("Size: " + myLL.size());
+    System.out.println("Empty: " + myLL.isEmpty());
+    System.out.println("First element: " + myLL.get(0));
+    System.out.println("Third Element: " + myLL.get(2));
+    System.out.println("Last Element: " + myLL.get(10));
+    System.out.println("Second Element: " + myLL.get(1));
     myLL.set(0,"newFirst");
-    myLL.set(3,"newLast");
+    myLL.set(10,"newLast");
     myLL.set(2,"new3");
-    System.out.println("Before Remove\n"+myLL);
+    System.out.println("After set\n"+myLL);
     myLL.removeFirst();
     System.out.println("After Remove First\n"+myLL);
     myLL.remove(2);
     System.out.println("After Remove 2\n"+myLL);
-
-
+    myLL.removeLast();
+    System.out.println("After Remove Last\n" + myLL);
   } // end main
   
 } // end class

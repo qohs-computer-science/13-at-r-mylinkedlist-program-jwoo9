@@ -1,3 +1,5 @@
+//Justin Wu, 10/28/24, Pd 3
+//LinkedList class that constructs LinkedList, checks size and is empty, adds ListNodes, sets values, and removes listNodes
 public class MyLinkedList
 {
     private ListNode head;
@@ -79,6 +81,7 @@ public class MyLinkedList
             temp.setNext(temp2.getNext());
             Object retVal = temp2.getValue();
             temp2.setNext(null);
+            size--;
             return retVal;
         }//end else
     } //end method remove
@@ -90,8 +93,20 @@ public class MyLinkedList
         Object retVal = temp.getValue();
         head = head.getNext();
         temp.setNext(null);
+        size--;
         return retVal;
     }//end method removeFirst
+
+    public Object removeLast(){
+        if (size == 0)
+            return null;
+        ListNode temp = head;
+        while(temp.getNext().getNext()!=null)
+            temp=temp.getNext();
+        Object retVal = temp.getNext().getValue();
+        temp.setNext(null);
+        return retVal;
+    }//end method removeLast
 
     public String toString()
     {
